@@ -2,12 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/raayanpillai/.oh-my-zsh"
+export ZSH="/home/raayan/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
@@ -97,11 +97,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias rc="vim ~/.zshrc; source ~/.zshrc"
-alias rc-vim="vim ~/.vimrc"
-alias xmd-rc="vim ~/.xmonad/xmonad.hs"
-alias xmd-comp="xmonad --recompile"
-alias pbcopy="xsel --clipboard --input"
-alias pbpaste="xsel --clipboard --output"
 
-[ -s "/home/raayanpillai/.jabba/jabba.sh" ] && source "/home/raayanpillai/.jabba/jabba.sh"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export PATH="$HOME/.githubcli/bin:$HOME/.bloop:$PATH"
+
