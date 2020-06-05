@@ -11,7 +11,7 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '[%F{cyan}%b%f] '
 ## Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%F{magenta}%n%f@%F{red}%m%f ${PWD/#$HOME/~} ${vcs_info_msg_0_}%# '
+PROMPT='%F{magenta}%n%f@%F{red}%m%f ${PWD/#$HOME/~} ${vcs_info_msg_0_}$ '
 
 export CLICOLOR=1
 
