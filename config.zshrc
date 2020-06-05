@@ -25,6 +25,9 @@ export EDITOR='vim'
 alias rsc="source ~/.zshrc"
 alias rc="vim ~/.zshrc; rsc"
 alias vrc="vim ~/.vimrc"
+dot-update() {
+	(cd $DOTFILE_DIR && git stash && git fetch --all && git reset --hard origin/master)
+}
 
 # VI Mode
 bindkey -v

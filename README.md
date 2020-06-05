@@ -4,14 +4,15 @@ My bare-bones dotfiles
 
 # Usage
 
-## .zshrc
-On a host machine, do the following
-```shell
-echo "source /path/to/dotfiles/config.zshrc" > $HOME/.zshrc
-source $HOME/.zshrc
+The following will clone and move into the repo.
+Then it will backup existing config to `*.bak` and create linkages to the `dotfiles` repo
+```
+git clone https://github.com/raayan/dotfiles
+git cd dotfiles
+chmod +x setup.sh
+./setup.sh
 ```
 
-## .vimrc
-```shell
-echo "source /path/to/dotfiles/config.vimrc" > $HOME/.vimrc
-```
+## Updating
+You can run `dot-update` to update this repo and ultimately your dotfiles.
+
