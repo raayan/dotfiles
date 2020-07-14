@@ -37,6 +37,3 @@ bindkey -v
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
-# Lockbook Commands
-alias lbedit="lockbook edit $(lockbook list | fzf)"
-
