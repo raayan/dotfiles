@@ -45,8 +45,9 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
 # GitHub Find
-gh-find() {
+gh-find() { 
+    git status || return
     local remote=$(git config remote.origin.url | sed -e's/:/\//g' -e's/\.git//g' | cut -d@ -f2)
     local hash="${1:-$(git rev-parse HEAD)}"
-    open "https://$remote/blob/$hash/$(fzf)"
+    open "https://$remote/blob/$hash/`git ls-files | fzf`"
 }
