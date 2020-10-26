@@ -1,6 +1,12 @@
 # Raayan's zshrc
 # Created 2020-06-05
 
+# zsh history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+setopt SHARE_HISTORY
+
 # Load builtins
 autoload -Uz vcs_info
 
