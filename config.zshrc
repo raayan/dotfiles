@@ -52,3 +52,10 @@ gh-find() {
     local hash="${2:-$(git rev-parse HEAD)}"
     open "https://$remote/blob/$hash/$1"
 }
+
+# git move with dir creation
+# usage: git-mover some/file/or/dir dest/dir
+git-mover() {
+    git status > /dev/null || return
+    mkdir -p $2 && git mv $1 $2
+}
