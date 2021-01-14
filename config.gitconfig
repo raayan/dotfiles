@@ -1,0 +1,12 @@
+[user]
+    name = raayan
+[commit]
+    gpgsign = true
+[alias]
+    unstage = reset HEAD --
+    undo = reset --soft HEAD~1
+    this = symbolic-ref --short HEAD
+    set-upstream = !git branch --set-upstream-to=origin/`git this`
+    push-ud = !git push -u origin `git this`
+    checkout-raayan = !git checkout -b raayan/`git this`
+    branches = for-each-ref --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
