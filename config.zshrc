@@ -59,3 +59,10 @@ git-mover() {
     git status > /dev/null || return
     mkdir -p $2 && git mv $1 $2
 }
+
+# append string to beginning of file
+# usage: echo-front "some good lines up front" good/file.txt
+echo-front() {
+    appended=$(echo "$1"; cat "$2";)
+    echo "$appended" > $2
+}
