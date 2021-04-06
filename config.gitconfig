@@ -10,3 +10,6 @@
     push-ud = !git push -u origin `git this`
     checkout-raayan = !git checkout -b raayan/`git this`
     branches = for-each-ref --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+    backup = !git branch TMP-$(date +"%s")/$(git this)
+    ol = log --oneline
+    ol10 = log --oneline -n 10
