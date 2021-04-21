@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Pilfered from https://stackoverflow.com/a/37473257/6445679
+
+# Not quite your Rolex
+while true ; do
+    clear
+    printf "[%s] Output of '%s'\n" "$(date)" "$*"
+    # "$@" <- we don't want to do it this way, just this:
+    ${SHELL-/bin/sh} -c "$*"
+    sleep 1  # genuine Quartz movement
+done

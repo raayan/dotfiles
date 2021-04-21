@@ -32,6 +32,7 @@ alias rc="vim ~/.zshrc; rsc"
 alias vrc="vim ~/.vimrc"
 alias dfrc="vim $DOTFILE_DIR/config.zshrc; rsc"
 alias dfcd="cd $DOTFILE_DIR"
+alias cheapwatch="$DOTFILE_DIR/cheapwatch"
 dot-update() {
 	(cd $DOTFILE_DIR && git stash && git fetch --all && git reset --hard origin/master)
 	rsc
