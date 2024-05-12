@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
     use('nvim-tree/nvim-tree.lua')
     use("mbbill/undotree")
     use('nvim-lualine/lualine.nvim')
+    use("theprimeagen/harpoon")
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         requires = { { 'nvim-lua/plenary.nvim' } }
