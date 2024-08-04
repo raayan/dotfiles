@@ -101,6 +101,15 @@ require("lazy").setup({
         {
             "nvim-lualine/lualine.nvim",
             config = function()
+                local trouble = require("trouble")
+                local symbols = trouble.statusline({
+                    mode = "lsp_document_symbols",
+                    groups = {},
+                    title = false,
+                    filter = { range = true },
+                    format = "{kind_icon}{symbol.name:Normal}",
+                    hl_group = "lualine_c_normal",
+                })
                 require('lualine').setup({
                     options = {
                         icons_enabled = false,
@@ -110,6 +119,10 @@ require("lazy").setup({
                             winbar = { 'NvimTree' },
                         },
                         globalstatus = false,
+                    },
+                    sections = {
+                        lualine_c = {
+                        },
                     },
                 })
             end,
@@ -165,6 +178,18 @@ require("lazy").setup({
                   })
                   vim.cmd([[colorscheme moonfly]])
             end,
+        },
+        {
+            "folke/trouble.nvim",
+            opts = {},
+            cmd = "Trouble",
+            keys = {
+                {
+                    "<leader>xx",
+                    "<cmd>Trouble diagnostics toggle<cr>",
+                    desc = "Diagnostics",
+                },
+            },
         },
     },
     -- colorscheme that will be used when installing plugins.
