@@ -60,7 +60,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 
 vim.opt.background = "dark"
-vim.cmd.colorscheme "industry"
+-- vim.cmd.colorscheme "industry"
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -104,18 +104,12 @@ require("lazy").setup({
                 require('lualine').setup({
                     options = {
                         icons_enabled = false,
-                        theme = '16color',
+                        theme = 'moonfly',
                         disabled_filetypes = {
                             statusline = { 'NvimTree' },
                             winbar = { 'NvimTree' },
                         },
                         globalstatus = false,
-                    },
-                    winbar = {
-                        lualine_a = { 'buffers' },
-                    },
-                    inactive_winbar = {
-                        lualine_a = { 'buffers' },
                     },
                 })
             end,
@@ -158,13 +152,28 @@ require("lazy").setup({
             "mrcjkb/rustaceanvim",
             version = "^5",
             lazy = false,
-        }
+        },
+        { "stevearc/dressing.nvim" },
+        { 
+            "bluz71/vim-moonfly-colors",
+            name = "moonfly",
+            lazy = false,
+            priority = 1000,
+            config = function()
+                  require("moonfly").custom_colors({
+                      bg = "#000000",
+                  })
+                  vim.cmd([[colorscheme moonfly]])
+            end,
+        },
     },
     -- colorscheme that will be used when installing plugins.
-    install = { colorscheme = { "habamax" } },
+    install = { colorscheme = { "moonfly" } },
     -- automatically check for plugin updates
     checker = { enabled = true },
 })
+
+vim.g.rustfmt_autosave = 1
 
 vim.g.rustaceanvim = {
     tools = {
