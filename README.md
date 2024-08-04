@@ -1,8 +1,7 @@
 # dotfiles
 My bare-bones dotfiles
 
-
-# Usage
+## Usage
 
 The following will clone and move into the repo.
 Then it will backup existing config to `*.bak` and create linkages to the `dotfiles` repo
@@ -13,6 +12,23 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-## Updating
+### Updating
 You can run `dot-update` to update this repo and ultimately your dotfiles.
 
+## ZSH history with FZF
+Install `fzf`
+
+curl this <https://raw.githubusercontent.com/joshskidmore/zsh-fzf-history-search/master/zsh-fzf-history-search.zsh>
+somewhere and then add to your `.zshrc`:
+
+```bashrc
+source <path-to-it>/zsh-fzf-history-search.zsh
+```
+
+## SSH GPG YubiKey
+Install required programs and add folowing to `.zshrc`
+
+```bashrc
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+```
